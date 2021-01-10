@@ -21,8 +21,46 @@
 
 .nav_avatar {
   position: fixed;
-  right: 20px;
+  right: 100px;
 
   width: 30px;
   object-fit: contain;
+}
+.username {
+  position: fixed;
+  right: 30px;
+  color: white;
+}
+
+.nav .user-btn {
+  display: flex;
+  position: fixed;
+  top: 5px;
+  right: 150px;
+  width: 50px;
+}
+
+.nav-btn {
+  cursor: pointer;
+  color: white;
+  outline: none;
+  border: none;
+  background-color: rgba(51, 51, 51, 0.5);
+  font-weight: 700;
+  border-radius: 0.3vw;
+}
+.nav-btn:hover {
+  color: #000;
+  background-color: #e6e6e6;
+  transition: all 0.2s;
+}
+
+.login-btn {
+  width: 60px;
+}
+.register-btn {
+  width: 80px;
+}
+.logout-btn {
+  width: 60px;
 }

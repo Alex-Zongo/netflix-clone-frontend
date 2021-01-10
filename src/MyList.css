@@ -1,0 +1,47 @@
+.mylist-container {
+  background-color: #111;
+
+  margin-left: 20px;
+  margin-right: 20px;
+
+  color: white;
+  padding: 20px;
+}
+.mylist-title {
+  margin-top: 80px;
+}
+.movies_posters {
+  display: flex;
+
+  flex-wrap: wrap;
+}
+
+.movie {
+  width: 300px;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  position: relative;
+}
+
+.movie span {
+  margin-top: 20px;
+  opacity: 0;
+}
+
+.movie_poster {
+  width: 100%;
+  object-fit: cover;
+  max-height: 250px;
+  margin-right: 10px;
+
+  transition: transform 450ms;
+}
+
+.movie:hover span {
+  opacity: 1;
+}
+.movie_poster:hover {
+  transform: scale(1.15);
+}

@@ -1,31 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 import "./App.css";
-import requests from "./request";
-import Row from "./Row";
-import Banner from "./Banner";
+
+import Welcome from "./Welcome";
+import Login from "./Login";
+import Register from "./Register";
+import MyList from "./MyList";
 import Nav from "./Nav";
 
+export const CredentialsContext = React.createContext();
+
 function App() {
+  const [credentials, setCredentials] = useState(null);
   return (
     <div className="app">
-      <Nav />
-      <Banner />
-      <Row
-        title="NETFLIX ORIGINALS"
-        fetchUrl={requests.fetchNetflixOriginals}
-        isLargeRow
-      />
-      <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
-      <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
-      <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
-      <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
-      <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
-      <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
-      <Row title="Documentaries" fetchUrl={requests.fetchDocumentariesMovie} />
-      <Row title="Anime" fetchUrl={requests.fetchAnimationMovies} />
-      <Row title="Family Movies" fetchUrl={requests.fetchFamilyMovies} />
-      <Row title="Science Fictions" fetchUrl={requests.fetchSciencesFictions} />
-      <Row title="TV Movies" fetchUrl={requests.fetchTVMovies} />
+      <CredentialsContext.Provider value={[credentials, setCredentials]}>
+        <Router>
+          <Nav />
+          <Switch>
+            <Route exact path="/">
+              <Welcome />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/register">
+              <Register />
+            </Route>
+            <Route path="/mylist">
+              <MyList />
+            </Route>
+          </Switch>
+        </Router>
+      </CredentialsContext.Provider>
     </div>
   );
 }

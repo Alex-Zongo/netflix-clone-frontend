@@ -30,10 +30,11 @@
   color: white;
   outline: none;
   border: none;
+  width: 80px;
   font-weight: 700;
   border-radius: 0.3vw;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   margin-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;

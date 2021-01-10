@@ -1,4 +1,6 @@
-const API_KEY = "7cc1fbee3615dde8f02b5d0840c60a61";
+const API_KEY = process.env.REACT_APP_API_KEY;
+
+export const backendURL = "https://a-netflix-clone-backend.herokuapp.com/";
 
 const requests = {
   fetchTrending: `/trending/all/week?api_key=${API_KEY}`,
