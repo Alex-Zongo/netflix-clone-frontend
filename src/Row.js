@@ -76,13 +76,14 @@ function Row({ title, fetchUrl, isLargeRow }) {
     };
     const list = await getMylist();
     let newMovielist = [];
-    const movieCopy = list.filter((movie) => movie.id === newMovie.id);
-    if (!movieCopy) {
-      newMovielist = [...list, newMovie];
-    } else {
-      newMovielist = [...list];
-    }
-
+    const newlist = list.filter(
+      (movie) =>
+        movie.name !== newMovie.name ||
+        movie.backdrop_path !== newMovie.backdrop_path
+    );
+    console.log(newlist);
+    newMovielist = [...newlist, newMovie];
+    console.log(newMovielist);
     addMylistToDB(newMovielist);
   };
 

@@ -23,7 +23,8 @@ function MyList() {
       })
       .then((response) => setMylist(response.data))
       .catch((error) => console.log(error));
-  });
+  }, [token]);
+  console.log(mylist);
 
   // render the movies in the list
   return (
